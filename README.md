@@ -18,7 +18,7 @@ Keys can be queried using values in a manner identical to that of ```find()```, 
 
 An array of all keys can be generated using the ```keys()``` function.
 
-A function can be mapped over all pairs in localStorage using the ```map()``` function; A hash of including each pair that has been acted upon will be retuned.
+A function can be mapped over all pairs in localStorage using the ```map()``` function, which returns a hash of each pair that has been acted upon.
 
 ##Examples
 ```
