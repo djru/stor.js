@@ -16,6 +16,6 @@ Values can be retrieved using ```find(KEY)```. Parameters can be strings: ```Sto
 
 Keys can be queried using values in a manner identical to that of ```find()```, using the ```where()``` function. This will return either a single key or an array of keys.
 
-An array of all keys can be generated using the ```Stor.keys``` function.
+An array of all keys can be generated using the ```keys()``` function.
 
 A function can be mapped over all pairs in localStorage using the ```map()``` function; A hash of including each pair that has been acted upon will be retuned.
