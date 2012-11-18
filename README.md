@@ -55,7 +55,7 @@ Stor.keys()
 	=> ["Person1", "Person2", "Person3", "Dan Ruswick", "Aristotle", "Camus", ]
 
 Stor.map(function(value){if(typeof value == "string"){return value + "!"}})
-	=> {Person1: "Dan Ruswick!", Person2: "Johnny Appleseed", Person3: "John Smith"}
+	=> {Person1: "Dan Ruswick!", Person2: "Johnny Appleseed!", Person3: "John Smith!"}
 
 
 
