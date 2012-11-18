@@ -37,7 +37,7 @@ Stor.find("Person1")
 	=> ["Dan Ruswick"]
 
 Stor.find(["Dan Ruswick","Aristotle"])
-	=> [{age: 16, profession: "unemployed"},{age: 2396, profession: ["ethicist","writer","poet","misogynist"]}]
+	=> [{name: "Dan Ruswick", age: 16, profession: "unemployed"},{name: "Aristotle", age: 2396, profession: ["ethicist","writer","poet","misogynist"]}]
 	
 Stor.find(/[dc].{1,}/i) // Matches keys "Dan" and "Camus"
 	=> ["{name: 'Dan Ruswick', age: 16, profession: "philosopher"}", "{name: 'Albert Camus', age: 99, profession: "existentialist"}"]
