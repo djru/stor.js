@@ -31,8 +31,6 @@ Stor.create("Person2", "John Smith")
 Stor.create("Person3", "Johnny Appleseed")
 	=> ["Person3", "Johnny Appleseed"]
 
-
-
 Stor.create("Dan Ruswick", {age: 16, profession: "unemployed"})
 	=> ["Dan Ruswick", "{age: 16, profession: "unemployed"}"]
 
@@ -41,8 +39,6 @@ Stor.create("Aristotle", {age: 2396, profession: ["ethicist","writer","poet","My
 
 Stor.create("Camus", {age: 99, profession: "existentialist"})
 	=> ["Camus", "{age: 99, profession: "existentialist"}"]
-
-
 
 Stor.find("Person1")
 	=> ["Dan Ruswick"]
@@ -53,9 +49,6 @@ Stor.find(["Dan Ruswick","Aristotle"])
 Stor.find(/[dc].{1,}/i) // Matches keys "Dan Ruswick" and "Camus"
 	=> ["{age: 16, profession: "philosopher"}", "{age: 99, profession: "existentialist"}"]
 
-
-
-
 Stor.where("John Smith")
 	=> ["Person1"]
 
@@ -64,8 +57,6 @@ Stor.where(["John Smith", "Johnny Appleseed"])
 
 Stor.where(/[J].{1,}/) //Matches John Smith and Johnny Appleseed
 	=> ["Person2", Person3]
-	
-	
 	
 Stor.keys()
 	=> ["Person1", "Person2", "Person3", "Dan Ruswick", "Aristotle", "Camus", ]
