@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Stor by orzogen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Stor</h1>
+        <p>LocalStorage for Humans</p>
+
+        <p class="view"><a href="https://github.com/orzogen/Stor">View the Project on GitHub <small>orzogen/Stor</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/orzogen/Stor/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/orzogen/Stor/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/orzogen/Stor">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Stor, A LocalStorage Helper Library</h1>
+
+<h2>About</h2>
+
+<p>Stor is a lightweight JavaScript library that aid and ease the use of localStorage. It includes set and get methods that obviate the need to deal with JSON parsing, allowing you to save objects to localStorage while maintaining code legibility and conciseness. Stor also includes advanced search functionality, enabling filtering using regex and multiple terms, while also providing search utility for both keys and values.</p>
+
+<h2>Why</h2>
+
+<p>Stor was a product of an insufferably monotonous Saturday afternoon.</p>
+
+<h2>Suggestion</h2>
+
+<p>If you'd like to request a feature, <a href="mailto:orzogen@gmail.com">email me</a>.</p>
+
+<h2>Use</h2>
+
+<p>Entries can be written to localStorage by calling <code>create(KEY, VALUE)</code> Values can be strings: <code>Stor.create("Name", "Dan")</code>, or objects: <code>Stor.create("numbers", [1,4,14]])</code>. If no key is specified, an random 8-digit string will be generated and set as the key. Calling <code>create()</code> will return an two-index array with the key and value.</p>
+
+<p>Values can be retrieved using <code>find(KEY)</code>. Parameters can be strings: <code>Stor.find("Name")</code>, arrays of strings: <code>Stor.find(["Name","Age"])</code>, or regular expressions: <code>Stor.find(/N.{1,}/i)</code>. In cases for which multiple values are returned, they will be returned in an array. </p>
+
+<p>Keys can be queried using values in a manner identical to that of <code>find()</code>, using the <code>where()</code> function. This will return either a single key or an array of keys. Please note that objects are converted to strings when they are stored, and using a regex as a parameter may return stringified objects. Use with discretion.</p>
+
+<p>An array of all keys can be generated using the <code>keys()</code> function.</p>
+
+<p>A function can be mapped over all pairs in localStorage using the <code>map()</code> function; A hash of including each pair that has been acted upon will be retuned.</p>
+
+<h2>Examples</h2>
+
+<pre><code>Stor.create("Person1", "Dan Ruswick")
+    =&gt; ["Person1", "Dan Ruswick"]
+
+Stor.create("Person2", "John Smith")
+    =&gt; ["Person2", "John Smith"]
+
+Stor.create("Person3", "Johnny Appleseed")
+    =&gt; ["Person3", "Johnny Appleseed"]
+
+Stor.create("Dan Ruswick", {age: 16, profession: "unemployed"})
+    =&gt; ["Dan Ruswick", "{age: 16, profession: "unemployed"}"]
+
+Stor.create("Aristotle", {age: 2396, profession: ["ethicist","writer","poet","Mysogynyst"]})
+    =&gt; ["Aristotle", "{age: 2396, profession: ["ethicist","writer","poet","Mysogynyst"]}"]
+
+Stor.create("Camus", {age: 99, profession: "existentialist"})
+    =&gt; ["Camus", "{age: 99, profession: "existentialist"}"]
+
+Stor.find("Person1")
+    =&gt; ["Dan Ruswick"]
+
+Stor.find(["Dan Ruswick","Aristotle"])
+    =&gt; [{age: 16, profession: "unemployed"},{age: 2396, profession: ["ethicist","writer","poet","Mysogynyst"]}]
+
+Stor.find(/[dc].{1,}/i) // Matches keys "Dan Ruswick" and "Camus"
+    =&gt; ["{age: 16, profession: "philosopher"}", "{age: 99, profession: "existentialist"}"]
+
+Stor.where("John Smith")
+    =&gt; ["Person1"]
+
+Stor.where(["John Smith", "Johnny Appleseed"])
+    =&gt; ["Person2", Person3]
+
+Stor.where(/[J].{1,}/) //Matches John Smith and Johnny Appleseed
+    =&gt; ["Person2", Person3]
+
+Stor.keys()
+    =&gt; ["Person1", "Person2", "Person3", "Dan Ruswick", "Aristotle", "Camus", ]
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/orzogen">orzogen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
