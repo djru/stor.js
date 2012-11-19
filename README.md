@@ -27,20 +27,20 @@ A function can be mapped over all pairs in localStorage using the ```map()``` fu
 Stor.create("Person1", "Dan Ruswick")  
 	=> ["Person1", "Dan Ruswick"]
 
-Stor.create("Dan Ruswick", {age: 16, profession: "unemployed"})
-	=> ["Dan Ruswick", "{age: 16, profession: "unemployed"}"]
+Stor.create("Dan", {name: "Dan Ruswick", age: 16, profession: "writer"})
+	=> ["Dan", {name: "Dan Ruswick", age: 16, profession: "writer"}]
 	
-Stor.remove("Dan Ruswick", {age: 16, profession: "unemployed"})
-	=> ["Dan Ruswick", "{age: 16, profession: "unemployed"}"]
+Stor.remove("Dan")
+	=> ["Dan Ruswick", {name: "Dan Ruswick", age: 16, profession: "writer"}]
 
 Stor.find("Person1")
 	=> ["Dan Ruswick"]
 
-Stor.find(["Dan Ruswick","Aristotle"])
-	=> [{name: "Dan Ruswick", age: 16, profession: "unemployed"},{name: "Aristotle", age: 2396, profession: ["ethicist","writer","poet","misogynist"]}]
+Stor.find(["Dan", "Aristotle"])
+	=> [{name: "Dan Ruswick", age: 16, profession: "writer"},{name: "Aristotle", age: 2396, profession: ["ethicist","writer","poet","misogynist"]}]
 	
 Stor.find(/[dc].{1,}/i) // Matches keys "Dan" and "Camus"
-	=> ["{name: 'Dan Ruswick', age: 16, profession: "philosopher"}", "{name: 'Albert Camus', age: 99, profession: "existentialist"}"]
+	=> [{name: "Dan Ruswick", age: 16, profession: "writer"}, {name: "Albert Camus", age: 99, profession: "existentialist"}]
 
 Stor.where("Dan Ruswick")
 	=> ["Person1", "Dan Ruswick"]
