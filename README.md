@@ -1,7 +1,7 @@
 #Stor, A LocalStorage Helper Library
 
 ##About
-Stor is a lightweight JavaScript library that aid and ease the use of localStorage. It includes set and get methods that obviate the need to deal with JSON parsing, allowing you to save objects to localStorage while maintaining code legibility and conciseness. Stor also includes advanced search functionality, enabling filtering using regex and multiple terms, while also providing search utility for both keys and values.
+Stor is a lightweight JavaScript library that aid and ease the use of localStorage. It includes set and get methods that obviate the need to deal with JSON parsing, allowing you to save objects to localStorage while maintaining code legibility and conciseness. Stor also includes advanced search functionality, enabling filtering using regex and multiple terms, while also providing search utility for both keys and values. Stor is not an ORM, nor does it make use of proprietary objects. It is simply a collection of function that make interfacing with localStorage more efficient and easier. 
 
 ##Why
 Stor was a product of an insufferably monotonous Saturday afternoon.
@@ -10,7 +10,7 @@ Stor was a product of an insufferably monotonous Saturday afternoon.
 If you'd like to request a feature, [email me](mailto:orzogen@gmail.com).
 
 ##Use
-Entries can be written to localStorage by calling ```create(KEY, VALUE)``` Values can be strings: ```Stor.create("Name", "Dan")```, or objects: ```Stor.create("numbers", [1,4,14]])```. If no key is specified, an random 8-digit string will be generated and set as the key. Calling ```create()``` will return a two-index array with the key and value.
+Entries can be written to localStorage by calling ```create(KEY, VALUE)```. Values can be strings: ```Stor.create("Name", "Dan")```, or objects: ```Stor.create("numbers", [1,4,14]])```. If no key is specified, an random 8-digit string will be generated and set as the key. Calling ```create()``` will return a two-index array with the key and value.
 
 Entries can be deleted using the ```remove()``` function. This function accepts a single string as a parameter and will delete the pair for which that string is the key. This function will return a two-index array with the deleted key and value.
 
