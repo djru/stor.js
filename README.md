@@ -10,7 +10,7 @@ Stor was a product of an insufferably monotonous Saturday afternoon.
 If you'd like to request a feature, [email me](mailto:orzogen@gmail.com).
 
 ##Use
-All functions are properties of the ```Stor2``` object.
+All functions are properties of the ```Stor``` object.
 
 Entries can be written to localStorage by calling ```create(KEY, VALUE)```. Values can be strings: ```create("Name", "Dan")```, or objects: ```create("numbers", [1,4,14]])```. If no key is specified, an random 8-digit string will be generated and set as the key. Calling ```create()``` will return a two-index array with the key and value.
 
